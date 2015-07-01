@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/launcher:maxScreenCount="@integer/config_defaultWorkspaceMaxCount"
+launcher:addPreviewImageView="@layout/workspace_preview_item_image_add"
+-->
+
+<com.jzs.dr.mtplauncher.sjar.widget.WorkspacePreviews xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher"
+    android:tag="workspace_preview_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#20000000"
+    android:paddingTop="@dimen/workspace_preview_screen_paddingtop"
+    launcher:previewImageHeight="@dimen/workspace_preview_item_bmp_height"
+    launcher:previewImageView="@layout/workspace_preview_item_group"
+    launcher:addPreviewImageView="@layout/workspace_preview_item_image_add"
+    >
+
+	<com.jzs.dr.mtplauncher.sjar.widget.WorkspacePreviewContainer
+		android:tag="container" android:layout_width="match_parent"
+		android:layout_height="0dip" 
+		android:layout_weight="1"
+		android:gravity="center" 
+		launcher:maxCellX="@array/config_previewContainerMaxCellX" 
+		launcher:widthGap="10dp"
+		launcher:heightGap="15dp"
+		 />
+
+    <!-- delete target -->
+
+    <ImageView android:tag="droptarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/previewimg_delete_selector"
+        android:background="@drawable/bottombar_remove_screen_bg"
+        android:focusableInTouchMode="false"
+        />
+        
+</com.jzs.dr.mtplauncher.sjar.widget.WorkspacePreviews>
+

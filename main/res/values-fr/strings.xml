@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="menu_manage_apps">"Gérer les applications"</string>
+    <string name="menu_system_custom_settings">"Paramètres d'apparence"</string>
+    <string name="menu_settings">"Réglages du système"</string>
+    <string name="workspace_custom_settings_appicon">"Paramètres Icône"</string>
+    <string name="workspace_custom_settings_cycleslide">"Infini défilement"</string>
+    <string name="workspace_custom_settings_hotseat">"Barre de Dock"</string>
+    <string name="workspace_custom_settings_indicator">"Indicateur de page"</string>
+    <string name="workspace_custom_settings_label">"étiquette"</string>
+    <string name="workspace_custom_settings_grid">"Grille"</string>
+    <string name="workspace_custom_settings_statusbar">"La barre d'état"</string>
+    <string name="workspace_custom_settings_lock">"Verrouillage d'écran"</string>
+    <string name="menu_change_app_icon">"Icône personnalisée"</string>
+    <string name="crop_view_icon_restore">"Restaurer défaut"</string>
+    <string name="group_applications">"Demande"</string>
+    <string name="group_widgets">"GADGETS"</string>
+    <string name="crop_view_take_photo">"Prendre une photo"</string>
+    <string name="crop_view_local_gallery">"Galerie"</string>
+    <string name="crop_view_select_picture">"S'il vous plaît sélectionner une image"</string>
+    <string name="crop_view_custom_title_label">"Personnalisé nom de l'icône"</string>
+    <string name="crop_view_icon_bg_select_title">"Sélectionnez effet final"</string>
+    <string name="crop_view_save_image">"Sauver"</string>
+    <string name="crop_view_zoom_in">"Zoomer"</string>                      
+    <string name="crop_view_zoom_out">"Zoom arrière"</string>
+    <string name="crop_view_custom_empty_label">"Aucune application personnalisée"</string> 
+    <string name="crop_view_app_icon">App personnalisé</string>   
+
+    <string name="menu_change_sort_type">Icônes</string>
+    <string name="menu_apps_icon_sort_type_title">Titre</string>
+    <string name="menu_apps_icon_sort_type_installed_asc">Plus tôt l\'installation</string>
+    <string name="menu_apps_icon_sort_type_installed_desc">Le plus récent de l\'installation</string>
+    <string name="menu_apps_icon_sort_type_most_used">Most used</string>
+
+    <string name="menu_animate_effect_type">Effets de bureau</string>
+    
+    <string name="animate_effect_standard">Standard</string>
+    <string name="animate_effect_tablet">Cube</string>
+    <string name="animate_effect_cubeout">Square Box</string>
+    <string name="animate_effect_flipvertical">FlipVertical</string>
+    <string name="animate_effect_fliphorizontal">Rouleau</string> 
+    <string name="animate_effect_zoomin">Zoomer</string>
+    <string name="animate_effect_rotateup">Tournez UP</string>
+    <string name="animate_effect_rotatedown">La rotation vers le bas</string>
+    <string name="animate_effect_accordion">Accordéon</string>
+</resources>

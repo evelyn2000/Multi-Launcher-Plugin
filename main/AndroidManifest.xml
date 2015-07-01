@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jzs.dr.mtplauncher"
+    android:sharedUserId="jzs.mtplauncher.sharedUserId"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17"/>
+    
+    <permission
+        android:name="com.android.launcher.permission.INSTALL_SHORTCUT"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal"
+        android:label="@string/permlab_install_shortcut"
+        android:description="@string/permdesc_install_shortcut" />
+    <permission
+        android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal"
+        android:label="@string/permlab_uninstall_shortcut"
+        android:description="@string/permdesc_uninstall_shortcut"/>
+    <permission
+        android:name="com.android.launcher.permission.READ_SETTINGS"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal"
+        android:label="@string/permlab_read_settings"
+        android:description="@string/permdesc_read_settings"/>
+    <permission
+        android:name="com.android.launcher.permission.WRITE_SETTINGS"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="normal"
+        android:label="@string/permlab_write_settings"
+        android:description="@string/permdesc_write_settings"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> 
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.MANAGE_APP_TOKENS"/>
+	<uses-permission android:name="android.permission.PERSISTENT_ACTIVITY"/>
+	<uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+	<uses-permission android:name="android.permission.BROADCAST_PACKAGE_REMOVED"/>
+	<uses-permission android:name="android.permission.DELETE_PACKAGES"/>
+	 <uses-permission android:name="android.permission.ADVANCED_WIDGET_API"/>
+	 <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+	 <uses-permission android:name="android.permission.READ_MEDIA_STORAGE" />
+
+
+	<uses-permission android:name="com.jzs.permission.THEME_PLUGIN_PERMISSION" />
+    <uses-permission android:name="com.jzs.permission.SUPPORT_THEME_PLUGIN_PERMISSION" />
+    <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+
+    <application
+        android:name=".LauncherApplicationMain"
+        android:allowBackup="true"
+        android:label="@string/application_name"
+        android:icon="@drawable/ic_launcher_home"
+        
+        android:hardwareAccelerated="true"
+        android:largeHeap="@bool/config_largeHeap">
+        <activity
+            android:name=".LauncherActivity"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:configChanges="mcc|mnc"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+        </activity>
+        
+        
+        
+        <!-- Intent received used to install shortcuts from other applications -->
+        <receiver
+            android:name=".ctrl.InstallShortcutReceiver"
+            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT">
+            <intent-filter>
+                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Intent received used to uninstall shortcuts from other applications -->
+        <receiver
+            android:name=".ctrl.UninstallShortcutReceiver"
+            android:permission="com.android.launcher.permission.UNINSTALL_SHORTCUT">
+            <intent-filter>
+                <action android:name="com.android.launcher.action.UNINSTALL_SHORTCUT" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- The settings provider contains Home's data, like the workspace favorites -->
+        <provider
+            android:name=".model.LauncherProviderBase"
+            android:authorities="com.jzs.dr.mtplauncher.settings"
+            android:exported="true"
+            android:writePermission="com.android.launcher.permission.WRITE_SETTINGS"
+            android:readPermission="com.android.launcher.permission.READ_SETTINGS" />
+
+        <meta-data android:name="android.nfc.disable_beam_default"
+                       android:value="true" />
+                       
+        <service android:name=".JzsSupportLauncher"
+            android:label="@string/application_name"
+	          android:icon="@drawable/ic_launcher_home"
+	          android:logo="@drawable/ic_launcher_logo"
+            android:description="@com.jzs:string/theme_support_plugin_description"
+            android:permission="com.jzs.permission.SUPPORT_THEME_PLUGIN_PERMISSION"
+            >
+            <intent-filter>
+                <action android:name="android.intent.jzs.action.ACTION_JZS_PLUGIN"/>
+                <category android:name="android.intent.jzs.category.CATEGORY_JZS_SUPPORT_PLUGIN"/>
+            </intent-filter>
+            <meta-data android:name="com.jzs.plugin.meta.PLUGIN_TYPE_META_KEY" 
+		                  android:value="@com.jzs:integer/PluginType_Style_And_Skin" />
+						<meta-data android:name="com.jzs.plugin.meta.PLUGIN_TARGET_SUPPORT_SYSTEMTHEME_META_KEY" 
+                    android:value="true" />
+        </service>
+        
+        <service android:name=".defaults.LauncherDefault"
+            android:label="@string/plugin_default_name" 
+            android:logo="@drawable/ic_launcher_home"
+            android:icon="@drawable/ic_launcher_home"
+            android:permission="com.jzs.permission.THEME_PLUGIN_PERMISSION"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.jzs.action.ACTION_JZS_PLUGIN"/>
+                <category android:name="android.intent.jzs.category.CATEGORY_JZS_PLUGIN"/>
+            </intent-filter>
+						<meta-data android:name="com.jzs.plugin.meta.PLUGIN_TYPE_META_KEY" 
+		                  android:value="@com.jzs:integer/PluginType_Style" />
+            <meta-data android:name="com.jzs.plugin.meta.PLUGIN_CLASS_PARAMETER_META_KEY" 
+                    android:value="@com.jzs:integer/PluginParam_Context" />
+            <meta-data android:name="com.jzs.plugin.meta.PLUGIN_FOR_TARGET_META_KEY" 
+                    android:value="com.jzs.dr.mtplauncher.JzsSupportLauncher" />
+        </service>
+        
+        <activity
+            android:name=".CustomCropImageActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:icon="@drawable/ic_launcher_custom"
+            android:label="@string/crop_view_app_icon"
+            android:theme="@style/AppTheme.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.qishang.intent.jzs.ACTION_APP_CUSTOMAPPS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

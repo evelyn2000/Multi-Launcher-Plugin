@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Orientation of a widget. -->
+    <attr name="direction">
+        <!-- Vertical widget. -->
+        <enum name="vertical" value="0" />
+        <!-- Horizontal widget. -->
+        <enum name="horizontal" value="1" />
+    </attr>
+    
+    <attr name="container">
+        <enum name="CONTAINER_DESKTOP" value="-100" />
+        <enum name="CONTAINER_HOTSET" value="-101" />
+        <enum name="CONTAINER_APPS" value="-102" />
+    </attr>
+    
+    <attr name="ContentType">
+    		<flag name="Apps_All" value="0x01" />
+        <flag name="Widgets" value="0x02" />
+        <flag name="Apps_Frequent" value="0x11" />
+        <flag name="Apps_DownLoad" value="0x21" />
+        <flag name="Widgets_Shortcut" value="0x42" />
+    </attr>
+    
+    <attr name="maxScreenCount" format="integer"  />
+    <attr name="minScreenCount" format="integer"  />
+<!--    
+    <attr name="allAppButtonRank">
+        <enum name="none" value="-1" />
+        <enum name="left" value="0" />
+        <enum name="middle" value="1" />
+        <enum name="right" value="2" />
+    </attr>
+    -->
+    <!-- The number of horizontal cells in the CellLayout -->
+    <attr name="cellCountX" format="integer"  />
+    <!-- The number of vertical cells in the CellLayout -->
+    <attr name="cellCountY" format="integer"  />
+    
+    <attr name="isSlideWallpaper" format="boolean" />
+    
+    <attr name="cellWidth" format="dimension"  />
+    <attr name="cellHeight" format="dimension"  />
+    <attr name="widthGap" format="dimension" />
+    <attr name="heightGap" format="dimension" />
+    <attr name="maxGap" format="dimension" />
+
+    <skip />
+
+    <!-- Workspace specific attributes. These attributes are used to customize
+         the workspace in XML files. -->
+    <declare-styleable name="Workspace">
+        <!-- The first screen the workspace should display. -->
+        <attr name="defaultScreen" format="integer"  />
+
+        <!-- The number of horizontal cells in the CellLayout -->
+        <attr name="cellCountX" />
+        <!-- The number of vertical cells in the CellLayout -->
+        <attr name="cellCountY" />
+        
+        <attr name="isSlideWallpaper" />
+        <attr name="childPageLayout" format="reference" />
+        <attr name="outlineColor" format="color" />
+        <attr name="maxScreenCount" />
+        <attr name="minScreenCount" />
+        <attr name="defaultScreenCount" format="integer"  />
+    </declare-styleable>
+    
+    <!-- Hotseat specific attributes. These attributes are used to customize
+         the hotseat in XML files. -->
+    <declare-styleable name="Hotseat">
+        <!-- The number of horizontal cells in the CellLayout -->
+        <attr name="cellCountX" />
+        <!-- The number of vertical cells in the CellLayout -->
+        <attr name="cellCountY" />
+        
+        <attr name="allAppButtonRank" format="integer" />
+            
+        <attr name="scalePercentage" format="integer" />
+        <attr name="allAppButtonLayout" format="reference" />
+    </declare-styleable>
+    
+    <!-- CellLayout specific attributes. These attributes are used to customize
+         a CellLayout view in XML files. -->
+    <declare-styleable name="CellLayout">
+        <!-- The width of a single cell -->
+        <attr name="cellWidth" />
+        <!-- The height of a single cell -->
+        <attr name="cellHeight" />
+        <!-- An override for the width and height gap to allow users to specify
+             a specific size for the page using spacing instead of resolving the
+             spacing from the width of the page -->
+        <attr name="widthGap"  />
+        <attr name="heightGap" />
+        <!-- The max gap size for each dimension -->
+        <attr name="maxGap" />
+        
+        <!-- The number of horizontal cells in the CellLayout -->
+        <attr name="cellCountX" />
+        <!-- The number of vertical cells in the CellLayout -->
+        <attr name="cellCountY" />
+        
+        <attr name="normalBackground" format="reference" />
+        <attr name="activeGlowBackground" format="reference" />
+        <attr name="overScrollLeft" format="reference" />
+        <attr name="overScrollRight" format="reference" />
+        <attr name="foregroundPadding" format="dimension" />
+    </declare-styleable>
+
+    <!-- HolographicLinearLayout specific attributes. -->
+    <declare-styleable name="HolographicLinearLayout">
+        <!-- The source view to generate and apply the drawable states to/from -->
+        <attr name="sourceImageViewId" format="integer" />
+        <attr name="highlightColor" format="color" />
+    </declare-styleable>
+    
+    <declare-styleable name="DrawableStateProxyView">
+        <!-- The source view to delegate touch presses events to. -->
+        <attr name="sourceViewId" format="integer" />
+    </declare-styleable>
+    
+    <declare-styleable name="HandleView">
+        <!-- Orientation of the handle. -->
+        <attr name="direction" />
+    </declare-styleable>
+    
+    <!-- StrokedTextView specific attributes. -->
+    <declare-styleable name="StrokedTextView">
+        <!-- The color of the stroke outline -->
+        <attr name="strokeColor" format="color" />
+        <!-- The color of the text -->
+        <attr name="strokeTextColor" format="color" />
+        <!-- The width of the stroke -->
+        <attr name="strokeWidth" format="float" />
+    </declare-styleable>
+    
+    <declare-styleable name="DragLayer">
+        <!-- The source view to generate and apply the drawable states to/from -->
+        <attr name="leftHoverDrawable" format="reference" />
+        <attr name="rightHoverDrawable" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="FolderIcon">
+        <attr name="folderNameFormat" format="reference" />
+        <attr name="numItemsInPreview" format="integer" />
+        <!-- The number of horizontal cells in the CellLayout -->
+        <attr name="cellCountX" />
+        <!-- The number of vertical cells in the CellLayout -->
+        <attr name="cellCountY" />
+        <attr name="isSupportPreviewChild" format="boolean" />
+  <!--      <attr name="folderPreviewSize" format="dimension" />
+        <attr name="folderPreviewPadding" format="dimension" />
+        -->
+    </declare-styleable>
+    
+    <declare-styleable name="Folder">
+    		<!-- The number of horizontal cells in the CellLayout -->
+        <attr name="cellCountX" />
+        <!-- The number of vertical cells in the CellLayout -->
+        <attr name="cellCountY" />
+        <attr name="folderMaxNumItems" format="integer"/>
+        
+        <attr name="defaultFolderName" format="reference" />
+        <attr name="folderHintText" format="reference" />
+        <attr name="folderRenameFormat" format="reference" />
+        <attr name="folderOpenedFormat" format="reference" />
+        <attr name="folderClosedFormat" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="ButtonDropTarget">
+        <attr name="dropTargetBgTransitionDuration" format="integer"/>
+        <attr name="dropTargetDragPadding" format="dimension"/>
+        <attr name="hoverColor" format="color"/>
+    </declare-styleable>
+    
+    <declare-styleable name="DeleteDropTarget">
+        <attr name="uninstallDrawable" format="reference"/>
+        <attr name="removeDrawable" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="SearchDropTargetBar">
+        <attr name="useDropTargetDownTransition" format="boolean"/>
+        <attr name="dropTargetBarSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="PagedViewWidget">
+        <attr name="dimensionsFormatString" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="PagedViewCellLayout">
+        <attr name="cellWidth" />
+        <attr name="cellHeight" />
+        <attr name="widthGap" />
+        <attr name="heightGap" />
+        <attr name="maxGap" />
+    </declare-styleable>
+    
+    <declare-styleable name="PageViewIndicator">
+        <attr name="direction" />
+        <attr name="curScreenImage" format="reference" />
+        <attr name="defaultScreenImage" format="reference" />
+        <attr name="moreScreenImage" format="reference" />
+        <attr name="imageGap" format="dimension" />
+        <attr name="isCreateNumber" format="boolean" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        
+    </declare-styleable>
+    
+    <!-- PagedView specific attributes. These attributes are used to customize
+         a PagedView view in XML files. -->
+    <declare-styleable name="PagedView">
+        <!-- A spacing override for the icons within a page -->
+        <attr name="pageLayoutWidthGap" format="dimension" />
+        <attr name="pageLayoutHeightGap" format="dimension" />
+        <!-- The padding of the pages that are dynamically created per page -->
+        <attr name="pageLayoutPaddingTop" format="dimension" />
+        <attr name="pageLayoutPaddingBottom" format="dimension" />
+        <attr name="pageLayoutPaddingLeft" format="dimension" />
+        <attr name="pageLayoutPaddingRight" format="dimension" />
+        <!-- The space between adjacent pages of the PagedView. -->
+        <attr name="pageSpacing" format="dimension" />
+        <!-- The padding for the scroll indicator area -->
+        <attr name="scrollIndicatorPaddingLeft" format="dimension" />
+        <attr name="scrollIndicatorPaddingRight" format="dimension" />
+        <attr name="scrollEnableCycleSliding" format="boolean" />
+        
+    </declare-styleable>
+    
+    <!-- AppsCustomizePagedView specific attributes.  These attributes are used to
+         customize an AppsCustomizePagedView in xml files. -->
+    <declare-styleable name="AppsCustomizePagedView">
+        <!-- Max number of cells of applications horizontally -->
+        <attr name="maxAppCellCountX" format="integer" />
+        <!-- Max number of cells of applications vertically -->
+        <attr name="maxAppCellCountY" format="integer" />
+        <!-- Horizontal spacing between widgets and wallpapers -->
+        <attr name="widgetCellWidthGap" format="dimension" />
+        <!-- Vertical spacing between widgets -->
+        <attr name="widgetCellHeightGap" format="dimension" />
+        <!-- Number of widgets horizontally -->
+        <attr name="widgetCountX" format="integer" />
+        <!-- Number of widgets vertically -->
+        <attr name="widgetCountY" format="integer" />
+        <!-- The x index of the item to be focused in the cling -->
+        <attr name="clingFocusedX" format="integer" />
+        <!-- The y index of the item to be focused in the cling -->
+        <attr name="clingFocusedY" format="integer" />
+        
+        <attr name="ContentType" />
+    </declare-styleable>
+    
+    <declare-styleable name="PreviewImageView">
+        <attr name="checkDrawable" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="WorkspacePreviews">
+        <attr name="previewImageHeight" format="dimension" />
+        <attr name="maxScreenCount" />
+        <attr name="previewImageView" format="reference"/>
+        <attr name="addPreviewImageView" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="WorkspacePreviewContainer">
+        <attr name="android:gravity" />
+        <attr name="widthGap" />
+        <attr name="heightGap" />
+        <attr name="maxCellX" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="WorkspaceCustomSettingsPreviewView">
+        <attr name="previewBackground" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="BubbleTextView">
+        <attr name="supportIconAutoReSize" format="boolean"/>
+    </declare-styleable>
+    
+    <declare-styleable name="IgnorePackage">
+     	<attr name="iPackageName" format="string" />
+      <attr name="iClassName" format="string" />
+    </declare-styleable>
+</resources>

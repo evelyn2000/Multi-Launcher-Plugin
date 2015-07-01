@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.jzs.dr.mtplauncher.sjar.widget.MtpShortcutView
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher.style.ics"
+	android:layout_width="match_parent" 
+	android:layout_height="match_parent" >
+	
+	<com.jzs.dr.mtplauncher.sjar.widget.BubbleTextView
+		android:tag="app_icon_title" 
+		style="@style/WorkspaceIcon.Portrait"
+		android:focusable="true"
+   	android:background="@drawable/focusable_view_bg" />
+
+	<TextView android:tag="app_unread"
+		style="@style/UnreadNumAppearance"
+		android:visibility="gone"
+		android:layout_marginTop="8dp" 
+		android:layout_marginRight="@dimen/workspace_unread_margin_right"
+		android:layout_alignParentTop="true" 
+		android:layout_alignParentRight="true" />
+</com.jzs.dr.mtplauncher.sjar.widget.MtpShortcutView>

@@ -1,0 +1,129 @@
+<!-- Full screen view projects under the status bar and contains the background -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher"
+
+    android:id="@+id/launcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jzs.dr.mtplauncher.defaults.widget.TopFloatBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topfloatbar_height"
+        android:layout_marginTop="@dimen/topfloatbar_default_top_margin"
+        android:tag="topFloatBar"
+        android:background="@drawable/top_float_bar_bg"
+        />
+    
+    <com.jzs.dr.mtplauncher.sjar.widget.DragLayer
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drag_layer"
+        android:tag="drag_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        launcher:leftHoverDrawable="@drawable/page_hover_left_holo"
+        launcher:rightHoverDrawable="@drawable/page_hover_right_holo">
+        
+		<FrameLayout android:id="@+id/workspace_container"
+				android:tag="workspace_container"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent">
+			    
+        
+
+        <!-- The workspace contains 5 screens of cells -->
+        <com.jzs.dr.mtplauncher.defaults.widget.WorkspaceDefault
+        	android:id="@+id/workspace"
+            android:tag="workspace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/workspace_left_padding"
+            android:paddingRight="@dimen/workspace_left_padding"
+            android:paddingTop="@dimen/workspace_top_padding"
+            android:paddingBottom="@dimen/workspace_bottom_padding"
+            launcher:defaultScreen="@integer/config_defaultWorkspaceScreen"
+            launcher:cellCountX="@integer/cell_count_x"
+            launcher:cellCountY="@integer/cell_count_y"
+            launcher:pageSpacing="@dimen/workspace_page_spacing"
+            launcher:childPageLayout="@layout/workspace_screen"
+            launcher:scrollIndicatorPaddingLeft="@dimen/workspace_divider_padding_left"
+            launcher:scrollIndicatorPaddingRight="@dimen/workspace_divider_padding_right"
+            android:layout_marginRight="@dimen/workspace_right_padding_port">
+<!--
+            <include android:id="@+id/cell1" layout="@layout/workspace_screen" />
+            <include android:id="@+id/cell2" layout="@layout/workspace_screen" />
+            <include android:id="@+id/cell3" layout="@layout/workspace_screen" />
+            <include android:id="@+id/cell4" layout="@layout/workspace_screen" />
+            <include android:id="@+id/cell5" layout="@layout/workspace_screen" />
+            -->
+        </com.jzs.dr.mtplauncher.defaults.widget.WorkspaceDefault>
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:layout_gravity="bottom"
+		    android:layout_marginRight="@dimen/workspace_right_padding_port"
+		    android:layout_marginBottom="10dp">
+		    
+		    <com.jzs.dr.mtplauncher.sjar.widget.PageViewIndicator
+	            android:id="@+id/paged_view_indicator"
+	            android:tag="paged_view_indicator"
+	            android:layout_width="fill_parent"
+	            android:layout_height="@dimen/button_bar_screenindicator_height"
+	            android:layout_above="@id/hotseat"
+	            android:background="@drawable/page_indicator_background"
+	            launcher:curScreenImage="@drawable/page_current"
+	            launcher:defaultScreenImage="@drawable/page_indicator"
+	            launcher:moreScreenImage="@null"
+	            launcher:imageGap="6dip"
+	            launcher:isCreateNumber="false"
+	            launcher:textSize="12sp"
+	            launcher:textColor="#000000"
+	            /> 
+  
+         </LinearLayout>
+         	            
+        <include layout="@layout/hotseat"
+            android:id="@+id/hotseat"
+            android:layout_width="@dimen/button_bar_hotseat_height"
+            android:layout_height="match_parent"
+            android:layout_gravity="right" />
+        
+         <include
+            android:id="@+id/qsb_bar"
+            layout="@layout/qsb_bar"/>
+            
+	</FrameLayout>
+<!-- 
+        <com.jzs.dr.mtplauncher.sjar.widget.DrawableStateProxyView
+            android:id="@+id/voice_button_proxy"
+            android:layout_width="80dp"
+            android:layout_height="@dimen/qsb_bar_height"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:onClick="onClickVoiceButton"
+            android:importantForAccessibility="no"
+            launcher:sourceViewId="@+id/voice_button" />
+-->
+		<include layout="@layout/workspace_preview"
+            android:id="@+id/workspace_preview_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+		
+        <include layout="@layout/workspace_custom_settings"
+            android:id="@+id/workspace_custom_settings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+        
+        <include layout="@layout/apps_customize_pane"
+            android:id="@+id/apps_customize_pane"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+        
+    </com.jzs.dr.mtplauncher.sjar.widget.DragLayer>
+    
+</FrameLayout> 

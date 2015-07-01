@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	
+	  <integer-array translatable="false" name="config_previewContainerMaxCellX">
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+    </integer-array>
+
+		<array translatable="false" name="config_appIconFrameBackground">
+        <item>@drawable/ic_app_icon_frame_bg_01</item>
+        <item>@drawable/ic_app_icon_frame_bg_02</item>
+        <item>@drawable/ic_app_icon_frame_bg_03</item>
+        <item>@drawable/ic_app_icon_frame_bg_04</item>
+        <item>@drawable/ic_app_icon_frame_bg_05</item>
+    </array>
+    
+    <string-array name="config_workspaceGridSize_entries">
+        <item>@string/workspace_custom_grid_size_4x4</item>
+        <item>@string/workspace_custom_grid_size_4x5</item>
+        <item>@string/workspace_custom_grid_size_4x6</item>
+        <item>@string/workspace_custom_grid_size_5x5</item>
+        <item>@string/workspace_custom_grid_size_5x6</item>
+        <item>@string/workspace_custom_grid_size_6x6</item>
+    </string-array>
+    
+    <string-array translatable="false" name="config_workspaceGridSize_values">
+        <item>4x4</item>
+        <item>4x5</item>
+        <item>4x6</item>
+        <item>5x5</item>
+        <item>5x6</item>
+        <item>6x6</item>
+    </string-array>
+    
+    <array translatable="false" name="config_workspaceGridSize_previewimages">
+        <item>@drawable/workspace_custom_settings_grid_size_4x4</item>
+        <item>@drawable/workspace_custom_settings_grid_size_4x5</item>
+        <item>@drawable/workspace_custom_settings_grid_size_4x6</item>
+        <item>@drawable/workspace_custom_settings_grid_size_5x5</item>
+        <item>@drawable/workspace_custom_settings_grid_size_5x6</item>
+        <item>@drawable/workspace_custom_settings_grid_size_6x6</item>
+    </array>
+    
+    <string-array name="config_apps_icons_sort_entries">        
+        <item>@string/menu_apps_icon_sort_type_installed_asc</item>
+        <item>@string/menu_apps_icon_sort_type_installed_desc</item>
+        <item>@string/menu_apps_icon_sort_type_title</item>
+    <!--    <item>@string/menu_apps_icon_sort_type_most_used</item>	-->
+    </string-array>
+    
+    <string-array translatable="false" name="config_animate_effects_values">
+        <item>Standard</item>
+        <item>Tablet</item>
+   <!--     <item>CubeIn</item> -->
+        <item>CubeOut</item>
+    <!--    <item>FlipVertical</item> -->
+        <item>FlipHorizontal</item>
+    <!--    <item>Stack</item>  -->
+        <item>ZoomIn</item>
+    <!--    <item>ZoomOut</item>  -->
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+    
+    <string-array name="config_animate_effects_names">
+        <item>@string/animate_effect_standard</item>
+        <item>@string/animate_effect_tablet</item>
+        <item>@string/animate_effect_cubeout</item>
+     <!--   <item>@string/animate_effect_flipvertical</item>  -->
+        <item>@string/animate_effect_fliphorizontal</item>
+        <item>@string/animate_effect_zoomin</item>
+        <item>@string/animate_effect_rotateup</item>
+        <item>@string/animate_effect_rotatedown</item>
+        <item>@string/animate_effect_accordion</item>
+        
+        <!-- 翻页 -->
+        <!-- 滚筒 -->
+    </string-array>
+    
+</resources>

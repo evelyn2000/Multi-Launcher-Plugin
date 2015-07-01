@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.jzs.dr.mtplauncher.sjar.widget.PagedViewCellLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher.style.ics"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    launcher:cellWidth="@dimen/apps_customize_cell_width"
+    launcher:cellHeight="@dimen/apps_customize_cell_height"
+    launcher:maxGap="@dimen/apps_customize_max_gap" />

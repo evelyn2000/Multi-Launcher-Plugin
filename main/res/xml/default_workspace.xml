@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<favorites xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher">
+    <!-- Far-left screen [0] -->
+
+    <!-- Middle screen [1] -->
+    <appwidget
+        launcher:packageName="com.google.android.googlequicksearchbox"
+        launcher:className="com.google.android.googlequicksearchbox.SearchWidgetProvider"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="4"
+        launcher:spanY="1" />
+
+    <!-- Middle screen [2] -->
+	<appwidget
+        launcher:packageName="com.qishang.qsweather"
+        launcher:className="com.qishang.qsweather.QsWeatherAppWidgetProvider"
+        launcher:screen="2"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="4"
+        launcher:spanY="2" />
+
+<favorite 
+launcher:packageName="com.google.android.googlequicksearchbox" 
+launcher:className="com.google.android.googlequicksearchbox.VoiceSearchActivity" 
+launcher:screen="2" 
+launcher:x="0" 
+launcher:y="2" 
+/>
+
+<favorite 
+launcher:packageName="com.android.calendar" 
+launcher:className="com.android.calendar.AllInOneActivity" 
+launcher:screen="2" 
+launcher:x="1" 
+launcher:y="2" 
+/>
+
+<favorite 
+launcher:packageName="com.google.android.apps.maps" 
+launcher:className="com.google.android.maps.MapsActivity" 
+launcher:screen="2" 
+launcher:x="2" 
+launcher:y="2" 
+/>
+
+<favorite 
+launcher:packageName="com.android.vending" 
+launcher:className="com.android.vending.AssetBrowserActivity" 
+launcher:screen="2" 
+launcher:x="3" 
+launcher:y="2" 
+/>
+
+<favorite 
+launcher:packageName="com.android.gallery3d" 
+launcher:className="com.android.camera.CameraLauncher" 
+launcher:screen="2" 
+launcher:x="0" 
+launcher:y="3" 
+/>
+
+
+
+<favorite 
+launcher:packageName="com.android.gallery3d" 
+launcher:className="com.android.gallery3d.app.GalleryActivity"
+launcher:screen="2" 
+launcher:x="1" 
+launcher:y="3" 
+/>
+
+<favorite 
+launcher:packageName="com.android.deskclock" 
+launcher:className="com.android.deskclock.DeskClock" 
+launcher:screen="2" 
+launcher:x="2" 
+launcher:y="3" 
+/>
+
+<favorite 
+launcher:packageName="com.mediatek.filemanager" 
+launcher:className="com.mediatek.filemanager.FileManagerOperationActivity" 
+launcher:screen="2" 
+launcher:x="3" 
+launcher:y="3" 
+/>
+
+<favorite 
+launcher:packageName="com.mediatek.videoplayer" 
+launcher:className="com.mediatek.videoplayer.MovieListActivity" 
+launcher:screen="2" 
+launcher:x="0" 
+launcher:y="4" 
+/>
+
+<favorite 
+launcher:packageName="com.android.music" 
+launcher:className="com.android.music.MusicBrowserActivity" 
+launcher:screen="2" 
+launcher:x="1" 
+launcher:y="4" 
+/>
+
+<favorite 
+launcher:packageName="com.jzs.dr.mtplauncher" 
+launcher:className="com.jzs.dr.mtplauncher.CustomCropImageActivity" 
+launcher:screen="2" 
+launcher:x="2" 
+launcher:y="4" 
+/>
+
+<favorite 
+launcher:packageName="com.android.settings" 
+launcher:className="com.android.settings.Settings" 
+launcher:screen="2" 
+launcher:x="3" 
+launcher:y="4" 
+/>
+
+	
+    <!-- Middle screen [3] -->
+<favorite 
+launcher:packageName="com.android.contacts" 
+launcher:className="com.android.contacts.activities.PeopleActivity" 
+launcher:screen="3" 
+launcher:x="0" 
+launcher:y="0" 
+/>
+
+<favorite 
+launcher:packageName="com.mediatek.todos" 
+launcher:className="com.mediatek.todos.TodosActivity" 
+launcher:screen="3" 
+launcher:x="1" 
+launcher:y="0" 
+/>
+
+<favorite 
+launcher:packageName="com.mediatek.notebook" 
+launcher:className="com.mediatek.notebook.NotesList" 
+launcher:screen="3" 
+launcher:x="2" 
+launcher:y="0" 
+/>
+
+<favorite 
+launcher:packageName="com.google.android.googlequicksearchbox" 
+launcher:className="com.google.android.googlequicksearchbox.SearchActivity" 
+launcher:screen="3" 
+launcher:x="3" 
+launcher:y="0" 
+/>
+
+<favorite 
+launcher:packageName="com.android.calculator2" 
+launcher:className="com.android.calculator2.Calculator" 
+launcher:screen="3" 
+launcher:x="0" 
+launcher:y="1" 
+/>
+
+<favorite 
+launcher:packageName="com.android.email" 
+launcher:className="com.android.email.activity.Welcome" 
+launcher:screen="3" 
+launcher:x="1" 
+launcher:y="1" 
+/>
+
+<favorite 
+launcher:packageName="com.google.android.apps.maps" 
+launcher:className="com.google.android.maps.driveabout.app.DestinationActivity" 
+launcher:screen="3" 
+launcher:x="2" 
+launcher:y="1" 
+/>
+
+<favorite 
+launcher:packageName="com.mediatek.datatransfer" 
+launcher:className="com.mediatek.datatransfer.BootActivity" 
+launcher:screen="3" 
+launcher:x="3" 
+launcher:y="1" 
+/>
+
+<folder
+		launcher:packageName="com.jzs.internal"
+		launcher:className="prebuild.foldericon.common"
+		launcher:screen="3"
+		launcher:x="0"
+		launcher:y="2"
+		launcher:title="@string/folder_name_tool">
+		<favorite 
+		launcher:packageName="com.android.soundrecorder" 
+		launcher:className="com.android.soundrecorder.SoundRecorder" 
+		launcher:screen="0" 
+		launcher:x="0" 
+		launcher:y="0" 
+		/>
+		<favorite 
+		launcher:packageName="com.google.android.apps.maps" 
+		launcher:className="com.google.android.maps.PlacesActivity" 
+		launcher:screen="0" 
+		launcher:x="1" 
+		launcher:y="0" 
+		/>
+		
+		<favorite 
+		launcher:packageName="com.android.settings" 
+		launcher:className="com.android.settings.Settings$WifiSettingsActivity" 
+		launcher:screen="0" 
+		launcher:x="0" 
+		launcher:y="1" 
+		/>
+		 <favorite 
+		launcher:packageName="com.mediatek.StkSelection" 
+		launcher:className="com.mediatek.StkSelection.StkSelection" 
+		launcher:screen="0" 
+		launcher:x="1" 
+		launcher:y="1" 
+		/> 
+<!--		<favorite
+		launcher:packageName="com.mediatek.todos"
+		launcher:className="com.mediatek.todos.TodosActivity"
+		launcher:screen="0"
+		launcher:x="0"
+		launcher:y="0"/> 
+		<favorite
+		launcher:packageName="com.android.settings"
+		launcher:className="com.android.settings.Settings"
+		launcher:screen="0"
+		launcher:x="1"
+		launcher:y="0"/>
+		<favorite
+		launcher:packageName="com.android.calculator2"
+		launcher:className="com.android.calculator2.Calculator"
+		launcher:screen="0"
+		launcher:x="2"
+		launcher:y="0"/>
+		<favorite
+		launcher:packageName="com.android.calendar"
+		launcher:className="com.android.calendar.AllInOneActivity"
+		launcher:screen="0"
+		launcher:x="0"
+		launcher:y="1"/>
+		<favorite
+		launcher:packageName="com.mediatek.filemanager"
+		launcher:className="com.mediatek.filemanager.FileManagerOperationActivity"
+		launcher:screen="0"
+		launcher:x="1"
+		launcher:y="1"/>
+		<favorite
+		launcher:packageName="com.android.deskclock"
+		launcher:className="com.android.deskclock.DeskClock"
+		launcher:screen="0"
+		launcher:x="2"
+		launcher:y="1"/>-->
+	</folder>
+<favorite 
+launcher:packageName="com.android.providers.downloads.ui" 
+launcher:className="com.android.providers.downloads.ui.DownloadList" 
+launcher:screen="3" 
+launcher:x="1" 
+launcher:y="2" 
+/>
+
+<!--
+
+
+
+-->
+
+	
+
+
+    <!-- Far-left screen [4] -->
+<appwidget 
+launcher:packageName="com.android.music" 
+launcher:className="com.android.music.MediaAppWidgetProvider" 
+launcher:screen="4" 
+launcher:x="0" 
+launcher:y="4" 
+launcher:spanX="4" 
+launcher:spanY="1" 
+/>
+
+    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
+    <favorite
+        launcher:packageName="com.android.dialer"
+        launcher:className="com.android.dialer.DialtactsActivity"
+        launcher:container="CONTAINER_HOTSET"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0" />
+    <favorite
+        launcher:packageName="com.android.mms"
+        launcher:className="com.android.mms.ui.BootActivity"
+        launcher:container="CONTAINER_HOTSET"
+        launcher:screen="1"
+        launcher:x="1"
+        launcher:y="0" />
+    <favorite
+        launcher:packageName="com.android.browser"
+        launcher:className="com.android.browser.BrowserActivity"
+        launcher:container="CONTAINER_HOTSET"
+        launcher:screen="2"
+        launcher:x="2"
+        launcher:y="0" />    
+</favorites>

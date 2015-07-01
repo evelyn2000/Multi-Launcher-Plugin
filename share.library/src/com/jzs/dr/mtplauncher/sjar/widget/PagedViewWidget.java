@@ -1,0 +1,256 @@
+/*
+ * Copyright (C) 2010 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.jzs.dr.mtplauncher.sjar.widget;
+
+import android.appwidget.AppWidgetProviderInfo;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.Rect;
+import android.text.TextUtils;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.jzs.dr.mtplauncher.sjar.R;
+import com.jzs.dr.mtplauncher.sjar.model.LauncherModel;
+import com.jzs.dr.mtplauncher.sjar.utils.Util;
+
+/**
+ * The linear layout used strictly for the widget/wallpaper tab of the customization tray
+ */
+public class PagedViewWidget extends LinearLayout {
+    private static final String TAG = "PagedViewWidgetLayout";
+
+    protected static boolean sDeletePreviewsWhenDetachedFromWindow = true;
+
+    protected String mDimensionsFormatString;
+    protected CheckForShortPress mPendingCheckForShortPress = null;
+    protected ShortPressListener mShortPressListener = null;
+    protected boolean mShortPressTriggered = false;
+    protected static PagedViewWidget sShortpressTarget = null;
+    protected boolean mIsAppWidget;
+    protected final Rect mOriginalImagePadding = new Rect();
+
+    public PagedViewWidget(Context context) {
+        this(context, null);
+    }
+
+    public PagedViewWidget(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public PagedViewWidget(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+
+        TypedArray a = context.obtainStyledAttributes(attrs,
+        		R.styleable.PagedViewWidget, defStyle, 0);
+        
+        mDimensionsFormatString = a.getString(R.styleable.PagedViewWidget_dimensionsFormatString);
+        //mDimensionsFormatString = r.getString(R.string.widget_dims_format);
+        
+        a.recycle();
+        
+//        final Resources r = context.getResources();
+//        mDimensionsFormatString = r.getString(R.string.widget_dims_format);
+
+        setWillNotDraw(false);
+        setClipToPadding(false);
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+
+        final ImageView image = (ImageView) findViewWithTag("widget_preview");//(R.id.widget_preview);
+        mOriginalImagePadding.left = image.getPaddingLeft();
+        mOriginalImagePadding.top = image.getPaddingTop();
+        mOriginalImagePadding.right = image.getPaddingRight();
+        mOriginalImagePadding.bottom = image.getPaddingBottom();
+    }
+
+    public static void setDeletePreviewsWhenDetachedFromWindow(boolean value) {
+        sDeletePreviewsWhenDetachedFromWindow = value;
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (Util.DEBUG_LAYOUT) {
+        	Util.Log.d(TAG, "onDetachedFromWindow: this = " + this);
+        }        
+        if (sDeletePreviewsWhenDetachedFromWindow) {
+            final ImageView image = (ImageView) findViewWithTag("widget_preview");//findViewById(R.id.widget_preview);
+            if (image != null) {
+                FastBitmapDrawable preview = (FastBitmapDrawable) image.getDrawable();
+                if (preview != null && preview.getBitmap() != null) {
+                    preview.getBitmap().recycle();
+                }
+                image.setImageDrawable(null);
+            }
+        }
+    }
+
+    public void applyFromAppWidgetProviderInfo(AppWidgetProviderInfo info,
+            int maxWidth, int[] cellSpan) {
+        mIsAppWidget = true;
+        final ImageView image = (ImageView) findViewWithTag("widget_preview");//findViewById(R.id.widget_preview);
+        if (maxWidth > -1) {
+            image.setMaxWidth(maxWidth);
+        }
+        image.setContentDescription(info.label);
+        final TextView name = (TextView) findViewWithTag("widget_name");//findViewById(R.id.widget_name);
+        name.setText(info.label);
+        final TextView dims = (TextView) findViewWithTag("widget_dims");//findViewById(R.id.widget_dims);
+        if (dims != null) {
+            int hSpan = Math.min(cellSpan[0], 4);//LauncherModel.getCellCountX());
+            int vSpan = Math.min(cellSpan[1], 4);//LauncherModel.getCellCountY());
+            if(!TextUtils.isEmpty(mDimensionsFormatString)){
+            	dims.setText(String.format(mDimensionsFormatString, hSpan, vSpan));
+            }
+        }
+    }
+
+    public void applyFromResolveInfo(PackageManager pm, ResolveInfo info) {
+        mIsAppWidget = false;
+        CharSequence label = info.loadLabel(pm);
+        if (Util.DEBUG_LAYOUT) {
+        	Util.Log.d(TAG, "applyFromResolveInfo: info = " + info + ",label = " + label);
+        }
+
+        final ImageView image = (ImageView) findViewWithTag("widget_preview");//findViewById(R.id.widget_preview);
+        image.setContentDescription(label);
+        final TextView name = (TextView) findViewWithTag("widget_name");//findViewById(R.id.widget_name);
+        name.setText(label);
+        final TextView dims = (TextView) findViewWithTag("widget_dims");//findViewById(R.id.widget_dims);
+        if (dims != null && !TextUtils.isEmpty(mDimensionsFormatString)) {
+            dims.setText(String.format(mDimensionsFormatString, 1, 1));
+        }
+    }
+
+    public int[] getPreviewSize() {
+        final ImageView i = (ImageView) findViewWithTag("widget_preview");//findViewById(R.id.widget_preview);
+        int[] maxSize = new int[2];
+        maxSize[0] = i.getWidth() - mOriginalImagePadding.left - mOriginalImagePadding.right;
+        maxSize[1] = i.getHeight() - mOriginalImagePadding.top;
+        return maxSize;
+    }
+
+    public void applyPreview(FastBitmapDrawable preview, int index) {
+        final PagedViewWidgetImageView image =
+            (PagedViewWidgetImageView) findViewWithTag("widget_preview");//findViewById(R.id.widget_preview);
+        if (preview != null) {
+            image.mAllowRequestLayout = false;
+            image.setImageDrawable(preview);
+            if (mIsAppWidget) {
+                // center horizontally
+                int[] imageSize = getPreviewSize();
+                int centerAmount = (imageSize[0] - preview.getIntrinsicWidth()) / 2;
+                image.setPadding(mOriginalImagePadding.left + centerAmount,
+                        mOriginalImagePadding.top,
+                        mOriginalImagePadding.right,
+                        mOriginalImagePadding.bottom);
+            }
+            image.setAlpha(1f);
+            image.mAllowRequestLayout = true;
+        }
+    }
+
+    public void setShortPressListener(ShortPressListener listener) {
+        mShortPressListener = listener;
+    }
+
+    public interface ShortPressListener {
+        void onShortPress(View v);
+        void cleanUpShortPress(View v);
+    }
+
+    public class CheckForShortPress implements Runnable {
+        public void run() {
+            if (sShortpressTarget != null) return;
+            if (mShortPressListener != null) {
+                mShortPressListener.onShortPress(PagedViewWidget.this);
+                sShortpressTarget = PagedViewWidget.this;
+            }
+            mShortPressTriggered = true;
+        }
+    }
+
+    protected void checkForShortPress() {
+        if (sShortpressTarget != null) return;
+        if (mPendingCheckForShortPress == null) {
+            mPendingCheckForShortPress = new CheckForShortPress();
+        }
+        postDelayed(mPendingCheckForShortPress, 120);
+    }
+
+    /**
+     * Remove the longpress detection timer.
+     */
+    protected void removeShortPressCallback() {
+        if (mPendingCheckForShortPress != null) {
+          removeCallbacks(mPendingCheckForShortPress);
+        }
+    }
+
+    protected void cleanUpShortPress() {
+        removeShortPressCallback();
+        if (mShortPressTriggered) {
+            if (mShortPressListener != null) {
+                mShortPressListener.cleanUpShortPress(PagedViewWidget.this);
+            }
+            mShortPressTriggered = false;
+        }
+    }
+
+    public static void resetShortPressTarget() {
+        sShortpressTarget = null;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        super.onTouchEvent(event);
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_UP:
+                cleanUpShortPress();
+                break;
+            case MotionEvent.ACTION_DOWN:
+                checkForShortPress();
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                cleanUpShortPress();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+        }
+
+        // We eat up the touch events here, since the PagedView (which uses the same swiping
+        // touch code as Workspace previously) uses onInterceptTouchEvent() to determine when
+        // the user is scrolling between pages.  This means that if the pages themselves don't
+        // handle touch events, it gets forwarded up to PagedView itself, and it's own
+        // onTouchEvent() handling will prevent further intercept touch events from being called
+        // (it's the same view in that case).  This is not ideal, but to prevent more changes,
+        // we just always mark the touch event as handled.
+        return true;
+    }
+}

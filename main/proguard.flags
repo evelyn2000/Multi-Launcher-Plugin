@@ -1,0 +1,47 @@
+# Don't obfuscate. We only need dead code striping.
+#-dontobfuscate
+
+-keep class com.jzs.dr.mtplauncher.LauncherActivity {
+  public *;
+}
+
+-keep class com.jzs.dr.mtplauncher.sjar.Launcher {
+  public protected *;
+}
+
+-keep class com.jzs.dr.mtplauncher.sjar.widget.CellLayout {
+  public *;
+}
+
+-keep class com.jzs.dr.mtplauncher.sjar.widget.DragLayer$LayoutParams {
+  public void setWidth(int);
+  public int getWidth();
+  public void setHeight(int);
+  public int getHeight();
+  public void setX(int);
+  public int getX();
+  public void setY(int);
+  public int getY();
+}
+
+-keep class com.jzs.dr.mtplauncher.sjar.widget.CellLayout$LayoutParams {
+  public void setWidth(int);
+  public int getWidth();
+  public void setHeight(int);
+  public int getHeight();
+  public void setX(int);
+  public int getX();
+  public void setY(int);
+  public int getY();
+}
+
+-keep class com.jzs.dr.mtplauncher.sjar.widget.Workspace {
+  public float getBackgroundAlpha();
+  public void setBackgroundAlpha(float);
+  public float getChildrenOutlineAlpha();
+  public void setChildrenOutlineAlpha(float);
+  public void setVerticalWallpaperOffset(float);
+  public float getVerticalWallpaperOffset();
+  public void setHorizontalWallpaperOffset(float);
+  public float getHorizontalWallpaperOffset();
+}

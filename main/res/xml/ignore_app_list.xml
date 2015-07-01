@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ignoreapps xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher"> 
+  <item
+        launcher:iPackageName="com.google.android.googlequicksearchbox"
+        launcher:iClassName="com.google.android.handsfree.HandsFreeLauncherActivity"
+ 	/>
+ 	
+</ignoreapps>

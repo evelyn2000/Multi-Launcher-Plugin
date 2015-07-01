@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jzs.dr.mtplauncher.sjar.widget.PreviewItemContainer 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/workspace_preview_bg"
+    android:orientation="vertical"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"
+    >
+	
+    <ImageView android:tag="checkimg"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/previewimg_check_btn_state"
+	    android:layout_gravity="right"
+	    android:layout_marginRight="5dip"
+	    />
+    
+    <ImageView android:tag="previewimg"
+        android:layout_width="fill_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    />
+    
+</com.jzs.dr.mtplauncher.sjar.widget.PreviewItemContainer>

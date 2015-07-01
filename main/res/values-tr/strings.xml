@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="menu_manage_apps">"Yönetim uygulamaları"</string>
+    <string name="folder_name_tool">"Araçları"</string>
+    <string name="crop_view_app_icon">"App özel"</string>
+    <string name="menu_change_app_icon">"Özel Simge"</string>
+    <string name="menu_change_sort_type">"Sıralama"</string>
+    <string name="menu_apps_icon_sort_type_installed_asc">"Ilk Fırsatta yüklü"</string>
+    <string name="menu_apps_icon_sort_type_installed_desc">"Yüklü Son"</string>
+    <string name="menu_apps_icon_sort_type_title">"Başlık"</string>
+    <string name="menu_wallpaper">Duvar kağıdı</string>
+    <string name="menu_settings">"Sistem ayarları"</string>
+    <string name="crop_view_custom_empty_label">"Hiçbir özel uygulama"</string>
+    <string name="crop_view_local_gallery">"Galerisi"</string>
+    <string name="crop_view_take_photo">"Fotoğraf çekmek"</string>
+    <string name="crop_view_select_picture">"Lütfen bir resim seçin"</string>
+    <string name="crop_view_custom_title_label">"Özel simge adı"</string>
+    <string name="crop_view_icon_bg_select_title">"Son effection Seçin"</string>
+    <string name="crop_view_zoom_in">"Yakınlaştırma"</string>
+    <string name="crop_view_zoom_out">"küçültmek"</string>
+    <string name="group_widgets">"widget'lar"</string>
+    <string name="group_applications">"uygulama"</string>
+    <string name="menu_system_custom_settings">"Görünümünü özelleştirin"</string>
+    <string name="workspace_custom_settings_appicon">"Özel Simgeleri"</string>
+    <string name="workspace_custom_settings_cycleslide">"sonsuz kaydırma"</string>
+    <string name="workspace_custom_settings_hotseat">"Eylem Çubuğu"</string>
+    <string name="workspace_custom_settings_indicator">"Sayfa göstergesi"</string>   
+    <string name="workspace_custom_settings_label">"Etiket"</string>
+    <string name="workspace_custom_settings_grid">"ızgara"</string>
+    <string name="workspace_custom_settings_statusbar">"Durum çubuğu"</string>
+    <string name="workspace_custom_settings_lock">"Kilitleme Wallpaper"</string>
+    <string name="crop_view_icon_restore">"Varsayılan ayarları geri yükle"</string>
+    <string name="crop_view_save_image">"kaydet"</string>
+
+    <string name="menu_animate_effect_type">Masaüstü Efektleri</string>
+    
+    <string name="animate_effect_standard">Standart</string>
+    <string name="animate_effect_tablet">Küp</string>
+    <string name="animate_effect_cubeout">Kare Kutu</string>
+    <string name="animate_effect_flipvertical">FlipVertical</string>
+    <string name="animate_effect_fliphorizontal">Rulo</string> 
+    <string name="animate_effect_zoomin">Büyüt</string>
+    <string name="animate_effect_rotateup">Döndür UP</string>
+    <string name="animate_effect_rotatedown">Aşağı Döndür</string>
+    <string name="animate_effect_accordion">Akordeon</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="menu_manage_apps">"Управление приложениями"</string>
+		<string name="menu_system_custom_settings">"Параметры оформления"</string>
+    <string name="menu_settings">"Системные настройки"</string>
+    <string name="workspace_custom_settings_appicon">"Настройки Иконка"</string>
+    <string name="workspace_custom_settings_cycleslide">"Бесконечные прокрутки"</string>
+    <string name="workspace_custom_settings_hotseat">"Док-бар"</string>
+    <string name="workspace_custom_settings_indicator">"индикатор страницы"</string>
+    <string name="workspace_custom_settings_label">"этикетка"</string>
+    <string name="workspace_custom_settings_grid">"сетка"</string>
+    <string name="workspace_custom_settings_statusbar">"Строка состояния"</string>
+    <string name="workspace_custom_settings_lock">"Блокировка обои"</string>
+    <string name="menu_change_app_icon">"Настраиваемая иконка"</string>
+    <string name="crop_view_icon_restore">"Восстановить по умолчанию"</string>
+    <string name="group_applications">"применение"</string>
+    <string name="group_widgets">"Виджеты"</string>
+    <string name="crop_view_take_photo">"Сфотографировать"</string>
+    <string name="crop_view_local_gallery">"галерея"</string>
+    <string name="crop_view_select_picture">"Пожалуйста, выберите фотографию"</string>
+    <string name="crop_view_custom_title_label">"Имя пользовательского значок"</string>
+    <string name="crop_view_icon_bg_select_title">"Выберите конечный эффект"</string>
+    <string name="crop_view_save_image">"экономить"</string>
+    <string name="crop_view_zoom_in">"Увеличение"</string>                      
+    <string name="crop_view_zoom_out">"Уменьшить"</string>
+    <string name="crop_view_custom_empty_label">"Нет Пользовательские приложения"</string>  
+    <string name="crop_view_app_icon">пользовательских приложений</string>   
+
+    <string name="menu_change_sort_type">сортировка</string>
+    <string name="menu_apps_icon_sort_type_title">название</string>
+    <string name="menu_apps_icon_sort_type_installed_asc">значок договоренности</string>
+    <string name="menu_apps_icon_sort_type_installed_desc">недавно  установки</string>
+    <string name="menu_apps_icon_sort_type_most_used">Most used</string>
+
+    <string name="menu_animate_effect_type">Эффекты рабочего стола</string>
+    
+    <string name="animate_effect_standard">стандарт</string>
+    <string name="animate_effect_tablet">куб</string>
+    <string name="animate_effect_cubeout">Площадь Box</string>
+    <string name="animate_effect_flipvertical">FlipVertical</string>
+    <string name="animate_effect_fliphorizontal">рулон</string> 
+    <string name="animate_effect_zoomin">Увеличение</string>
+    <string name="animate_effect_rotateup">Поверните ВВЕРХ</string>
+    <string name="animate_effect_rotatedown">Поверните вниз</string>
+    <string name="animate_effect_accordion">аккордеон</string>
+</resources>

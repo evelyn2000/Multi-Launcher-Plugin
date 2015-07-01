@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jzs.dr.mtplauncher.sjar.widget.PreviewImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.jzs.dr.mtplauncher"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/workspace_preview_bg"
+    launcher:checkDrawable="@drawable/previewimg_check_btn_state"
+    />
+

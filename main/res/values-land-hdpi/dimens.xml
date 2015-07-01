@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+
+<!-- CellLayout padding -->
+    <dimen name="cell_layout_left_padding_land">0dp</dimen>
+    <dimen name="cell_layout_right_padding_land">@dimen/cell_layout_left_padding_land</dimen>
+    <dimen name="cell_layout_top_padding_land">0dp</dimen>
+    <dimen name="cell_layout_bottom_padding_land">0dp</dimen>
+
+<!-- Workspace padding -->
+    <dimen name="workspace_left_padding_land">@dimen/qsb_bar_height</dimen>
+    <dimen name="workspace_right_padding_land">@dimen/button_bar_height</dimen>
+    <dimen name="workspace_top_padding_land">0dp</dimen>
+    <dimen name="workspace_bottom_padding_land">0dp</dimen>
+    
+    <dimen name="button_bar_hotseat_height">96dp</dimen>
+    <dimen name="workspace_max_gap">24dp</dimen>
+    <dimen name="hotseat_cell_width">96dp</dimen>
+    <dimen name="hotseat_cell_height">80dp</dimen>
+    <dimen name="cell_layout_left_padding">0dp</dimen>
+    <dimen name="cell_layout_right_padding">0dp</dimen>
+    <dimen name="workspace_right_padding_port">96dp</dimen>    
+    <dimen name="app_icon_padding_top">4dp</dimen>
+    <dimen name="app_icon_drawable_padding">2dp</dimen>
+    <dimen name="qsb_bar_height_inset">20dp</dimen>
+    <dimen name="qsb_bar_height">34dp</dimen>    
+
+    <dimen name="button_bar_height">32dip</dimen>
+    <dimen name="button_bar_height_top_padding">2dp</dimen>
+    <dimen name="button_bar_height_bottom_padding">2dp</dimen>
+    <dimen name="button_bar_width_left_padding">2dp</dimen>
+    
+    <dimen name="apps_customize_pageLayoutPaddingTop">10dp</dimen>
+    <integer name="apps_customize_widget_cell_count_x">4</integer>
+    <integer name="apps_customize_widget_cell_count_y">1</integer>
+    <dimen name="apps_customize_widget_cell_width_gap">8dp</dimen>
+    <dimen name="apps_customize_widget_cell_height_gap">20dp</dimen>
+</resources>

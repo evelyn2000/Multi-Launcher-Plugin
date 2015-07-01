@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2010 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.jzs.dr.mtplauncher.style.ics"
+      android:sharedUserId="jzs.mtplauncher.sharedUserId"
+	    android:versionCode="1"
+	    android:versionName="1.0">
+	    
+	    <uses-permission android:name="com.jzs.permission.THEME_PLUGIN_PERMISSION" />
+	    
+	    <application
+        android:label="@string/application_name"
+        android:icon="@drawable/ic_launcher_home"        
+        android:hardwareAccelerated="@bool/config_hardwareAccelerated"
+        android:largeHeap="@bool/config_largeHeap">
+        
+        <service android:name=".LauncherIcs"
+            android:label="@string/plugin_default_name" 
+            android:logo="@drawable/ic_launcher_home"
+            android:icon="@drawable/ic_launcher_home"
+            android:permission="com.jzs.permission.THEME_PLUGIN_PERMISSION"
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.jzs.action.ACTION_JZS_PLUGIN"/>
+                <category android:name="android.intent.jzs.category.CATEGORY_JZS_PLUGIN"/>
+            </intent-filter>
+						<meta-data android:name="com.jzs.plugin.meta.PLUGIN_TYPE_META_KEY" 
+		                  android:value="@com.jzs:integer/PluginType_Style" />
+            <meta-data android:name="com.jzs.plugin.meta.PLUGIN_CLASS_PARAMETER_META_KEY" 
+                    android:value="@com.jzs:integer/PluginParam_Context" />
+            <meta-data android:name="com.jzs.plugin.meta.PLUGIN_FOR_TARGET_META_KEY" 
+                    android:value="com.jzs.dr.mtplauncher.JzsSupportLauncher" />
+            <meta-data android:name="com.jzs.plugin.meta.PLUGIN_FOR_THEME_STYLE_META_KEY" 
+                    android:value="@com.jzs:integer/STYLE_DEFAULT" />
+        </service>
+    </application>
+</manifest>
